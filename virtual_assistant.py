@@ -37,3 +37,23 @@ def record_audio():
         print('Request results from Google Speech Recognition service error: ' + e)
 
     return user_audio
+
+# TESTING: Calling the record audio function
+# record_audio()
+
+# A function to get the virtual assistant response
+def assistant_response(text): 
+    print(text)
+
+    # Convert text to speech
+    my_obj = gTTS(text=text, lang='en', slow=False)
+
+    # Save the converted audio to a file 
+    my_obj.save('assistant_response.mp3')
+
+    os.system('start assistant_response.mp3')
+
+# TESTING: Calling the assistant response function
+# text = 'Hello, my name is SPUN. How can I assist you today?'
+# assistant_response(text)
+
