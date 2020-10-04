@@ -1,2 +1,2 @@
 # Virtual-Assistant
-AI virtual assistant. 
+A virtual assistant. 
