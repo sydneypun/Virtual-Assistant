@@ -121,26 +121,26 @@ def get_person(text):
 
 while True:
 
-    #record the audio
+    # Record the audio
     text = record_audio()
     response = '' 
 
-    #check for the wake word / phrase
+    # Check for the wake word / phrase
     if (wake_words(text) == True):
         
-        #check for greetings by the user
+        # Check for greetings by the user
         response = response + greeting(text)
 
-        #check to see if the user has said anything about data
+        # Check to see if the user has said anything about data
         if('date' in text):
             get_date = get_date()
             response = response + ' '+get_date
 
-        #check to see if the user said 'who is' 
+        # Check to see if the user said 'who is' 
         if('who is' in text):
             person = get_person(text) 
             wiki = wikipedia.summary(person, sentences=2)
             response = response +' '+ wiki
 
-        #assistant respond back using audio and text from response
+        # Assistant respond back using audio and text from response
         assistant_response(response)
